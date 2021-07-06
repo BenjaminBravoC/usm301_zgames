@@ -33,3 +33,4 @@ Route::get('consolas/get', [ConsolasController::class, "getConsolas"]);
 
 //TODO: esto tiene que cambiar, esta entero feo
 Route::post('consolas/post', [ConsolasController::class, "crearConsola"]);
+Route::post("consolas/delete", [ConsolasController::class,"eliminarConsola"]);
