@@ -29,6 +29,7 @@ Route::get("marcas/get", [ConsolasController::class, "getMarcas"]);
 //Route:get("url(endpoint)", [controlador::class, "metodo"]);
 
 Route::get('consolas/get', [ConsolasController::class, "getConsolas"]);
+Route::get('consolas/filtrar', [ConsolasController::class,"filtrarConsolas"]);
 
 
 //TODO: esto tiene que cambiar, esta entero feo

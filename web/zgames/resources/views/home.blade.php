@@ -36,5 +36,6 @@
 <!-- Esto define el contenido de la seccion javascript del master-->
 @section("javascript")
   <script src="{{asset('js/servicios/consolasService.js')}}"></script>
+  <script src="{{asset('js/servicios/marcasService.js')}}"></script>
   <script src="{{asset('js/home.js')}}"></script>
 @endsection

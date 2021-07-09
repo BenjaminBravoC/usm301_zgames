@@ -1,4 +1,22 @@
-       
+       const cargarMarcas = async ()=>{
+           //1. ir a buscar el filtro-cbx
+           let filtroCbx = document.querySelector("#filtro-cbx")
+           //2. ir a buscar las marcas
+           let marcas = await getMarcas();
+           marcas.forEach(m=>{
+               let option = document.createElement("option");
+               option.innerText = m;
+               option.value = m;
+               filtroCbx.appendChild(option);
+           });
+       }; 
+
+
+
+
+
+
+
        const iniciarEliminacion = async function(){
             //1. obtener el id a eliminar
             let id = this.idConsola
@@ -27,6 +45,7 @@
        const cargarTabla = (consolas)=>{
             //1. obtener una referencia al cuerpo de la tabla
             let tbody = document.querySelector("#tbody-consola");
+            tbody.innerHTML = "";
             //2. recorrer todas las consolas
             for(let i=0; i < consolas.length; ++i){
                 //3. por cada consola generar una fila
@@ -54,6 +73,12 @@
                 tbody.appendChild(tr);
             } 
         };
+        //El listener change sirve para cuando quieres ejecutar algo cuando el valor cambia
+        document.querySelector("#filtro-cbx").addEventListener("change", async ()=>{
+            let filtro = document.querySelector("#filtro-cbx").value
+            let consolas = await getConsolas(filtro);
+            cargarTabla(consolas);
+        });
 
 
 
@@ -61,6 +86,7 @@
             //aqui voy a cargar la tabla de consolas, porque si entra aqui
             //lo que haga en esta parte estoy seguro que se esta ejecutando
             //cuando la pagina esta totalemente cargada
+            await cargarMarcas();
             let consolas = await getConsolas();
             cargarTabla(consolas);
         });
