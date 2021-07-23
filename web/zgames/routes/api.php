@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ConsolasController;
+use App\Http\Controllers\JuegosController;
 //Quiero usar el controlador, asi que lo importo, se importa con
 //use namespace/NombreClase
 
@@ -35,3 +36,9 @@ Route::get('consolas/filtrar', [ConsolasController::class,"filtrarConsolas"]);
 //TODO: esto tiene que cambiar, esta entero feo
 Route::post('consolas/post', [ConsolasController::class, "crearConsola"]);
 Route::post("consolas/delete", [ConsolasController::class,"eliminarConsola"]);
+
+
+Route::get("juegos/get", [JuegosController::class, "getJuegos"]);
+Route::get("juegos/getByConsola", [JuegosController::class, "getJuegosByConsola"]);
+Route::post("juegos/post", [JuegosController::class "save"]);
+route::post("juegos/delete", [JuegosController::class "remove"]);
