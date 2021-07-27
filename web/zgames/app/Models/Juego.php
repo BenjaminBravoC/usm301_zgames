@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Juego extends Model
 {
     use HasFactory;
-    public function consola()
-        return $this->belongsTo("App\Models\Consola","consola_id");
+    public function consola(){
+        return $this->belongsTo("App\Models\Consola","consola_id");}
 }

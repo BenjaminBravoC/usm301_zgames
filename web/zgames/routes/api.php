@@ -40,5 +40,5 @@ Route::post("consolas/delete", [ConsolasController::class,"eliminarConsola"]);
 
 Route::get("juegos/get", [JuegosController::class, "getJuegos"]);
 Route::get("juegos/getByConsola", [JuegosController::class, "getJuegosByConsola"]);
-Route::post("juegos/post", [JuegosController::class "save"]);
-route::post("juegos/delete", [JuegosController::class "remove"]);
+Route::post("juegos/post", [JuegosController::class, "save"]);
+route::post("juegos/delete", [JuegosController::class, "remove"]);

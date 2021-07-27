@@ -26,7 +26,7 @@ class CrearTablaJuegos extends Migration
             $table->date("fecha_lanzamiento");
             //2. agregar la columna de la foranea
             //las claves primarias de laravel (id) por defecto son biginteger y unsigned
-            $table->integer("consola_id")->unsigned();
+            $table->bigInteger("consola_id")->unsigned();
             //3. agregar la relacion
             //ALTER  TABLE ADD CONSTRAINT FOREIGN KEY.....
             $table->foreign("consola_id")->references("id")->on("consolas")->onDelete("cascade");
